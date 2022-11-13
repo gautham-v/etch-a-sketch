@@ -1,8 +1,6 @@
 // Create a 16x16 grid of square divs
 function color(e){
-    //alert("Mouse over working!");
-    //console.log(this.classList.value);
-    this.setAttribute('style', 'background-color: #2fa745');
+    this.setAttribute('style', 'background-color: #A6AAE4');
 }
 
 function createGrid (columns){
@@ -18,22 +16,23 @@ function createGrid (columns){
         numOfColumns += ' auto';
     }
     container.setAttribute('style', `grid-template-columns: ${numOfColumns}`);
+    var griditems = container.querySelectorAll('div');
+    griditems.forEach(function (item) {
+        item.addEventListener("mouseover", color);
+    });
+
 }
 
 function clearGrid(){
     // container is going to null somewhere here
-    console.log(griditems.parentElement.id);
+    var griditems = container.querySelectorAll('div');
     griditems.forEach(function (item) {
-        console.log(`item's parent element's class name: ${item.parentElement.id}`);
-        item.parentNode.removeChild(item);
+        item.remove();
     });
-    console.log(griditems);
-    console.log(container.id);
 }
 
 function resizeGrid(){
     let newsize = prompt('Enter a new grid size');
-    let numOfColumns = 'auto';
     newsize = parseInt(newsize, 10);
     if (newsize <= 100) {
         clearGrid();
@@ -46,13 +45,6 @@ function resizeGrid(){
 
 const container = document.querySelector('#container');
 createGrid(16);
-const griditems = document.querySelectorAll('.grid-item');
-
-
-
-griditems.forEach(function (item) {
-    item.addEventListener("mouseover", color);
-  });
 
 const resizeButton = document.querySelector('.resize-btn');
 resizeButton.addEventListener('click', resizeGrid);
