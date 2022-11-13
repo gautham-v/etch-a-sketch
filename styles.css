@@ -1,0 +1,16 @@
+html {
+    font-family: sans-serif;
+}
+#container {
+    /* border: 20px solid yellow; */
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    /* padding: 10px; */
+    background-color: grey;
+}
+.grid-item {
+    border: 1px solid blue;
+    background-color: black;
+    text-align: center;
+    aspect-ratio: 1;
+}
