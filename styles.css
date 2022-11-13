@@ -1,14 +1,24 @@
 html {
     font-family: sans-serif;
 }
+h1 {
+    text-align: center;
+    padding-top: 25px;
+}
+.resize-btn{
+    display: grid;
+    margin: auto;
+}
 #container {
     /* border: 20px solid yellow; */
     display: grid;
     grid-template-columns: auto auto auto auto;
+    width: 600px;
+    margin: auto;
     
 }
 .grid-item {
-    border: 0.4px solid #AFAFAF;
+    border: 0.4px solid #E6E6E6;
     background-color: #FFFFFF;
     text-align: center;
     aspect-ratio: 1;
